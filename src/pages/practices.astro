@@ -1,0 +1,200 @@
+---
+// src/pages/v7/practices.astro
+import LayoutV7 from '../layouts/LayoutV7.astro';
+import Headerv7 from '../components/v7/Headerv7.astro';
+import Footerv7 from '../components/v7/Footerv7.astro';
+import MobilePracticeCard from '../components/v7/MobilePracticeCard.astro';
+import DesktopPracticeCard from '../components/v7/DesktopPracticeCard.astro';
+
+const practicesData = [
+  { src: 'yogaimage1.jpg', title: 'Baddha Ardha Matsyendrasana', dtPos: 'top-[2%] left-[2%] w-48', dtDelay: '0s', dtZ: 'z-20', dtPopDir: 'right' },
+  { src: 'yogaimage2.jpg', title: 'Akarna Dhanurasana', dtPos: 'top-[8%] left-[24%] w-56', dtDelay: '-2s', dtZ: 'z-20', dtPopDir: 'right' },
+  { src: 'yogaimage3.jpg', title: 'Bharadvajasana II', dtPos: 'top-[4%] right-[28%] w-52', dtDelay: '-4s', dtZ: 'z-20', dtPopDir: 'left' },
+  { src: 'yogaimage4.jpg', title: 'Ardha Matsyendrasana', dtPos: 'top-[6%] right-[2%] w-56', dtDelay: '-1.5s', dtZ: 'z-20', dtPopDir: 'left' },
+  { src: 'yogaimage5.jpg', title: 'Hindolasana', dtPos: 'top-[40%] left-[4%] w-48', dtDelay: '-3.5s', dtZ: 'z-20', dtPopDir: 'right' },
+  { src: 'yogaimage6.jpg', title: 'Surya Yantrasana', dtPos: 'top-[36%] left-[40%] w-60', dtDelay: '-0.5s', dtZ: 'z-30', dtPopDir: 'right' },
+  { src: 'yogaimage7.jpg', title: 'Eka Pada Sirsasana', dtPos: 'top-[38%] right-[4%] w-48', dtDelay: '-2.5s', dtZ: 'z-20', dtPopDir: 'left' },
+  { src: 'yogaimage8.jpg', title: 'Marichyasana I', dtPos: 'bottom-[5%] left-[6%] w-56', dtDelay: '-4.5s', dtZ: 'z-20', dtPopDir: 'right' },
+  { src: 'yogaimage9.jpg', title: 'Gomukhasana', dtPos: 'bottom-[12%] left-[30%] w-52', dtDelay: '-1.2s', dtZ: 'z-20', dtPopDir: 'right' },
+  { src: 'yogaimage10.jpg', title: 'Hanumanasana', dtPos: 'bottom-[35%] right-[22%] w-48', dtDelay: '-3.8s', dtZ: 'z-20', dtPopDir: 'left' },
+  { src: 'yogaimage11.jpg', title: 'Adho Mukha Vrksasana', dtPos: 'bottom-[8%] right-[32%] w-52', dtDelay: '-2.8s', dtZ: 'z-20', dtPopDir: 'left' },
+  { src: 'yogaimage12.jpg', title: 'Uddiyana Bandha', dtPos: 'bottom-[4%] right-[5%] w-56', dtDelay: '-0.8s', dtZ: 'z-20', dtPopDir: 'left' }
+];
+---
+
+<LayoutV7>
+  <Headerv7 theme='light' />
+  
+  <main class="relative w-full min-h-screen bg-[#f7f1e6] overflow-hidden">
+    
+    <section class="relative z-10 w-full px-6 md:px-12 lg:px-20 pt-[140px] pb-4">
+      <div class="max-w-3xl mx-auto text-center flex flex-col items-center">
+        <h1 class="font-serif text-[#1e293b] font-normal leading-[1.1] text-4xl md:text-5xl mb-6">
+          The Path of <br class="hidden sm:block" />
+          <span class="text-[#cf962a]">Inner Alignment</span>
+        </h1>
+        <p class="text-base md:text-lg font-serif text-[#334155] leading-relaxed">
+          Advait Yoga is not merely a physical exercise, but a profound system designed to bridge the gap between body, breath, and pure consciousness. Discover the foundational practices guided by the wisdom of the Himalayas.
+        </p>
+      </div>
+    </section>
+
+    <section class="relative z-10 w-full bg-[#f7f1e6] pb-24 overflow-hidden">
+      
+      <div class="block lg:hidden w-full mt-8">
+        <div class="flex overflow-x-auto gap-5 snap-x snap-mandatory hide-scrollbar px-6 pb-20 pt-4 w-full scroll-px-6">
+          
+          {practicesData.map((card) => (
+            <MobilePracticeCard src={card.src} title={card.title} />
+          ))}
+          
+          <div class="shrink-0 w-2 snap-end"></div>
+        </div>
+      </div>
+
+      <div class="hidden lg:flex relative w-full max-w-[1400px] h-[900px] mx-auto pointer-events-none items-center justify-center mt-4">
+        <div id="canvas-overlay" class="absolute inset-0 bg-[#f7f1e6]/60 backdrop-blur-[3px] opacity-0 transition-opacity duration-500 z-10 pointer-events-none rounded-3xl"></div>
+
+        {practicesData.map((card) => (
+          <DesktopPracticeCard 
+            src={card.src} 
+            title={card.title} 
+            pos={card.dtPos} 
+            delay={card.dtDelay} 
+            zIndex={card.dtZ} 
+            popoutDir={card.dtPopDir} 
+          />
+        ))}
+
+      </div>
+    </section>
+    <section class="relative z-20 w-full bg-[#ede2d0] py-24 px-6 md:px-12 lg:px-20 text-center overflow-hidden">
+      
+      <div class="absolute inset-0 opacity-40 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent"></div>
+
+      <div class="relative max-w-3xl mx-auto flex flex-col items-center">
+        
+        <div class="w-16 h-px bg-[#cf962a] mb-8"></div>
+        
+        <h2 class="font-serif text-[#1e293b] text-3xl md:text-4xl lg:text-5xl mb-6 leading-tight">
+          Ready to Deepen Your Practice?
+        </h2>
+        
+        <p class="text-[#334155] font-serif text-base md:text-lg mb-10 max-w-2xl leading-relaxed">
+         Move beyond the theory and experience the transformation firsthand. Deepen your spiritual journey through our immersive residential retreats and guided programs.
+        </p>
+        
+        <a href="/programs" class="pointer-events-auto w-full sm:w-auto px-10 py-4 rounded border border-[#edba4c] text-[#334155] font-semibold text-xs tracking-[0.1em] uppercase hover:bg-[#eaa749] hover:text-white transition-all duration-300 text-center shadow-sm">
+          Explore Our Programs
+        </a>
+        
+      </div>
+    </section>
+  </main>
+  <Footerv7 />
+</LayoutV7>
+
+<style is:global>
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    33% { transform: translateY(-12px) rotate(1.5deg); }
+    66% { transform: translateY(8px) rotate(-1deg); }
+  }
+  
+  .floating-card { 
+    animation: float 10s ease-in-out infinite; 
+  }
+  
+  .hide-scrollbar::-webkit-scrollbar { 
+    display: none; 
+  }
+  .hide-scrollbar { 
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+  }
+</style>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('.yoga-card');
+    const overlay = document.getElementById('canvas-overlay');
+    let activeCard = null;
+
+    const setBlur = (exemptCard) => {
+      if(overlay) overlay.classList.remove('opacity-0');
+      cards.forEach(c => {
+        if (c !== exemptCard) {
+          c.style.opacity = '0.35';
+          c.style.filter = 'blur(4px) grayscale(50%)'; 
+          c.style.zIndex = '10';
+        } else {
+          c.style.opacity = '1';
+          c.style.filter = 'none';
+          c.style.zIndex = '60'; 
+        }
+      });
+    };
+
+    const removeBlur = () => {
+      if(overlay) overlay.classList.add('opacity-0');
+      cards.forEach(c => {
+        c.style.opacity = '1';
+        c.style.filter = 'none';
+        c.style.zIndex = ''; 
+      });
+    };
+
+    cards.forEach(card => {
+      card.addEventListener('mouseenter', () => { if (!activeCard) setBlur(card); });
+      card.addEventListener('mouseleave', () => { if (!activeCard) removeBlur(); });
+
+      const readMoreBtn = card.querySelector('.read-more-btn');
+      const detailCard = card.querySelector('.detail-card');
+      const closeBtn = card.querySelector('.close-btn');
+
+      if (readMoreBtn && detailCard) {
+        readMoreBtn.addEventListener('click', (e) => {
+          e.stopPropagation(); 
+          
+          if (activeCard && activeCard !== card) {
+            const prevDetail = activeCard.querySelector('.detail-card');
+            if (prevDetail) {
+              prevDetail.classList.add('opacity-0', 'pointer-events-none', 'scale-95');
+              prevDetail.classList.remove('opacity-100', 'pointer-events-auto', 'scale-100');
+            }
+            if (activeCard.classList.contains('floating-card')) {
+               activeCard.style.animationPlayState = 'running';
+            }
+          }
+
+          activeCard = card;
+          setBlur(card);
+
+          if (card.classList.contains('floating-card')) {
+             card.style.animationPlayState = 'paused';
+          }
+          
+          detailCard.classList.remove('opacity-0', 'pointer-events-none', 'scale-95');
+          detailCard.classList.add('opacity-100', 'pointer-events-auto', 'scale-100');
+        });
+      }
+
+      if (closeBtn && detailCard) {
+        closeBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          detailCard.classList.add('opacity-0', 'pointer-events-none', 'scale-95');
+          detailCard.classList.remove('opacity-100', 'pointer-events-auto', 'scale-100');
+          
+          if (card.classList.contains('floating-card')) {
+             card.style.animationPlayState = 'running';
+          }
+
+          activeCard = null;
+          removeBlur();
+
+          if (card.matches(':hover')) { setBlur(card); }
+        });
+      }
+    });
+  });
+</script>

@@ -1,0 +1,316 @@
+---
+// src/pages/v7/about.astro
+import LayoutV7 from '../layouts/LayoutV7.astro';
+import Headerv7 from '../components/v7/Headerv7.astro';
+import Footerv7 from '../components/v7/Footerv7.astro';
+---
+
+<LayoutV7>
+  <Headerv7 theme='light' />
+  
+  <main id="hero-main" class="relative z-0 w-full min-h-screen bg-[#f7f1e6] flex items-center overflow-hidden [clip-path:inset(0)]">
+    
+    <div class="relative z-10 w-full px-6 md:px-12 lg:px-20 pt-[120px] md:pt-[140px] pb-12">
+        
+        <div class="relative w-full lg:w-[55%] flex flex-col items-center lg:items-start text-center lg:text-left">
+          
+          <div id="collage-container" class="absolute inset-0 lg:inset-auto lg:right-[-40vw] xl:right-[-35vw] lg:top-1/2 lg:-translate-y-1/2 z-0 opacity-35 lg:opacity-100 pointer-events-none mt-[-60px] sm:mt-[-80px] lg:mt-0 w-full lg:w-[420px] lg:h-[520px]">
+            
+            <img id="img-top-center" src="/images/v7/topcentercollage.jpg" 
+              class="absolute top-0 lg:top-10 left-1/2 -translate-x-1/2 w-[110px] md:w-[120px] lg:w-[140px] rounded-xl shadow-xl z-20 [will-change:transform,opacity]" />
+
+            <img id="img-top-left" src="/images/v7/topleftcollage.jpg" 
+              class="absolute top-[80px] lg:top-[120px] left-[2%] md:left-[10%] lg:left-0 w-[120px] md:w-[140px] lg:w-[160px] rounded-xl shadow-lg rotate-[-3deg] [will-change:transform,opacity]" />
+
+            <img id="img-top-right" src="/images/v7/toprightcollage.jpg" 
+              class="absolute top-[70px] lg:top-[110px] right-[2%] md:right-[10%] lg:right-0 w-[110px] md:w-[130px] lg:w-[150px] rounded-xl shadow-lg rotate-[3deg] [will-change:transform,opacity]" />
+
+            <img id="img-center" src="/images/v7/centercollage.jpg" 
+              class="absolute top-[140px] lg:top-[180px] left-1/2 -translate-x-1/2 w-[140px] md:w-[150px] lg:w-[170px] rounded-xl shadow-2xl z-30 [will-change:transform,opacity]" />
+
+            <img id="img-bottom-left" src="/images/v7/bottomleftcollage.jpg" 
+              class="hidden lg:block absolute bottom-0 left-[30px] w-[150px] rounded-xl shadow-lg rotate-[-2deg] [will-change:transform,opacity]" />
+
+            <img id="img-bottom-right" src="/images/v7/bottomrightcollage.jpg" 
+              class="hidden lg:block absolute bottom-[10px] right-[10px] w-[160px] rounded-xl shadow-lg rotate-[2deg] [will-change:transform,opacity]" />
+          </div>
+
+          <h1 class="font-serif text-[#1e293b] font-normal leading-[1.1] text-4xl md:text-5xl lg:text-[3.5rem] mb-6 relative z-10">
+            Embrace the Wisdom<br class="hidden sm:block" />
+            of the Himalayas
+          </h1>
+          
+          <p class="text-base md:text-lg font-serif text-[#334155] leading-relaxed mb-10 max-w-[90%] md:max-w-[80%] lg:max-w-none relative z-10">
+            Guided by ancient traditions and the serene energy of the mountains, the Himalayan Yogi offers a path to inner peace and harmonious living.
+          </p>
+
+          <div class="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto relative z-20">
+            <a href="#meet-yogi" class="pointer-events-auto w-full sm:w-auto px-10 py-4 rounded border border-[#edba4c] text-[#334155] font-semibold text-xs tracking-[0.1em] uppercase hover:bg-[#eaa749] hover:text-white transition-all duration-300 text-center shadow-sm">
+              MEET THE YOGI
+            </a>
+          </div>
+        </div>
+    </div>
+  </main>
+
+  <section id="meet-yogi" class="relative z-10 w-full bg-[#f7f1e6] py-16 lg:py-32 px-6 md:px-12 lg:px-20">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 lg:gap-24">
+      <div class="w-full md:w-1/2 flex justify-center">
+        <div class="relative w-56 h-56 md:w-80 md:h-80 rounded-full overflow-hidden shadow-2xl border-4 border-white">
+          <img src="/images/v7/aboutus.png" alt="The Himalayan Yogi" class="w-full h-full object-cover object-top" />
+        </div>
+      </div>
+      <div class="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left">
+        <div class="w-16 h-px bg-[#cf962a] mb-6"></div> 
+        <h2 class="font-serif text-[#1e293b] text-3xl md:text-4xl lg:text-5xl mb-6">ADVAIT YOGBHUSAN</h2>
+        <p class="text-base md:text-lg font-serif text-[#334155] leading-relaxed mb-8 max-w-lg">
+          Discover the journey of our founder, a dedicated practitioner sharing ancient wisdom from the Himalayas.
+        </p>
+        <a href="#journey" class="pointer-events-auto w-full sm:w-auto px-10 py-4 rounded border border-[#edba4c] text-[#334155] font-semibold text-xs tracking-[0.1em] uppercase hover:bg-[#eaa749] hover:text-white transition-all duration-300 text-center shadow-sm">
+          EXPLORE HIS JOURNEY
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="journey" class="relative w-full bg-[#f7f1e6] py-20 lg:py-32 px-6 md:px-12 lg:px-20 overflow-hidden">
+    <div class="max-w-5xl mx-auto relative">
+      
+      <div class="text-center mb-16 md:mb-24 relative z-10 timeline-item opacity-0 translate-y-8 transition-all duration-1000 ease-out">
+        <h2 class="font-serif text-[#1e293b] text-3xl md:text-4xl lg:text-5xl mb-6">The Journey of Advait Yogbhushan</h2>
+        <div class="w-16 h-px bg-[#cf962a] mx-auto"></div>
+      </div>
+
+      <div class="absolute left-[34px] md:left-1/2 top-[120px] md:top-[160px] bottom-0 w-px bg-gradient-to-b from-[#cf962a] via-[#cf962a] to-transparent opacity-40 md:-translate-x-1/2 z-0"></div>
+
+      <div class="space-y-12 md:space-y-24 relative z-10">
+        
+        <div class="relative flex flex-col md:flex-row items-start md:items-center w-full timeline-item opacity-0 translate-y-8 transition-all duration-1000 ease-out delay-100">
+          <div class="absolute left-0 md:left-1/2 w-5 h-5 rounded-full bg-[#f7f1e6] border-4 border-[#cf962a] md:-translate-x-1/2 mt-[6px] md:mt-0 z-10 shadow-sm"></div>
+          
+          <div class="w-full md:w-[45%] pl-12 md:pl-0 md:pr-12 md:text-right">
+            <span class="text-[#cf962a] font-semibold text-xs tracking-widest uppercase mb-2 block">Phase 01</span>
+            <h3 class="font-serif text-[#1e293b] text-2xl md:text-3xl mb-3">Early Life & Origins</h3>
+            <p class="text-base md:text-lg text-[#334155] leading-relaxed">
+              Born as Rajesh in Sinauli, Uttar Pradesh, Advait Yogbhushan was raised in humble circumstances by his mother. His early life was shaped by struggle, yet marked by a deep curiosity and an innate inclination toward inner awareness.
+            </p>
+          </div>
+           <div class="w-full md:w-[45%] pl-12 md:pl-12 md:pr-0 mt-8 md:mt-0">
+            <div class="relative w-full aspect-square md:aspect-[4/3] rounded-2xl overflow-hidden shadow-xl border border-black/5 group">
+              <img 
+                src="/images/v7/journeyimage7.jpg" 
+                alt="Turning Point in the Himalayas" 
+                class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-in-out" 
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="relative flex flex-col md:flex-row-reverse items-start md:items-center w-full timeline-item opacity-0 translate-y-8 transition-all duration-1000 ease-out delay-100">
+          <div class="absolute left-0 md:left-1/2 w-5 h-5 rounded-full bg-[#f7f1e6] border-4 border-[#cf962a] md:-translate-x-1/2 mt-[6px] md:mt-0 z-10 shadow-sm"></div>
+          
+          <div class="w-full md:w-[45%] pl-12 md:pl-12 md:pr-0 text-left">
+            <span class="text-[#cf962a] font-semibold text-xs tracking-widest uppercase mb-2 block">Phase 02</span>
+            <h3 class="font-serif text-[#1e293b] text-2xl md:text-3xl mb-3">Limitations & Struggle</h3>
+            <p class="text-base md:text-lg text-[#334155] leading-relaxed">
+              Living with nearly 40–46% physical disability, he faced significant limitations from a young age. Alongside this, he experienced a phase of confusion and disconnection, leading him to question his purpose and the nature of life itself.
+            </p>
+          </div>
+          <div class="w-full md:w-[45%] pl-12 md:pl-0 md:pr-12 mt-8 md:mt-0">
+            <div class="relative w-full aspect-square md:aspect-[4/3] rounded-2xl overflow-hidden shadow-xl border border-black/5 group">
+              <img 
+                src="/images/v7/journeyimage2.jpg" 
+                alt="Limitations and Struggle" 
+                class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-in-out" 
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="relative flex flex-col md:flex-row items-start md:items-center w-full timeline-item opacity-0 translate-y-8 transition-all duration-1000 ease-out delay-100">
+          <div class="absolute left-0 md:left-1/2 w-5 h-5 rounded-full bg-[#f7f1e6] border-4 border-[#cf962a] md:-translate-x-1/2 mt-[6px] md:mt-0 z-10 shadow-sm"></div>
+          
+          <div class="w-full md:w-[45%] pl-12 md:pl-0 md:pr-12 md:text-right">
+            <span class="text-[#cf962a] font-semibold text-xs tracking-widest uppercase mb-2 block">Phase 03</span>
+            <h3 class="font-serif text-[#1e293b] text-2xl md:text-3xl mb-3">Turning Point</h3>
+            <p class="text-base md:text-lg text-[#334155] leading-relaxed">
+              A near-death experience became the catalyst for transformation. This led him to the Himalayas, where a profound spiritual awakening shifted his path toward yoga and self-realization.
+            </p>
+          </div>
+          <div class="w-full md:w-[45%] pl-12 md:pl-12 md:pr-0 mt-8 md:mt-0">
+            <div class="relative w-full aspect-square md:aspect-[4/3] rounded-2xl overflow-hidden shadow-xl border border-black/5 group">
+              <img 
+                src="/images/v7/toprightcollage.jpg" 
+                alt="Turning Point in the Himalayas" 
+                class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-in-out" 
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="relative flex flex-col md:flex-row-reverse items-start md:items-center w-full timeline-item opacity-0 translate-y-8 transition-all duration-1000 ease-out delay-100">
+          <div class="absolute left-0 md:left-1/2 w-5 h-5 rounded-full bg-[#f7f1e6] border-4 border-[#cf962a] md:-translate-x-1/2 mt-[6px] md:mt-0 z-10 shadow-sm"></div>
+          
+          <div class="w-full md:w-[45%] pl-12 md:pl-12 md:pr-0 text-left">
+            <span class="text-[#cf962a] font-semibold text-xs tracking-widest uppercase mb-2 block">Phase 04</span>
+            <h3 class="font-serif text-[#1e293b] text-2xl md:text-3xl mb-3">Path of Transformation</h3>
+            <p class="text-base md:text-lg text-[#334155] leading-relaxed">
+              Through disciplined practice and study of yoga and Vedanta, he transformed himself physically, mentally, and spiritually. He later developed Advait Yoga, focusing on balance, breath, and inner alignment.
+            </p>
+          </div>
+              <div class="w-full md:w-[45%] pl-12 md:pl-0 md:pr-12 mt-8 md:mt-0">
+            <div class="relative w-full aspect-square md:aspect-[4/3] rounded-2xl overflow-hidden shadow-xl border border-black/5 group">
+              <img 
+                src="/images/v7/journeyimage4.jpg" 
+                alt="Limitations and Struggle" 
+                class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-in-out" 
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="relative flex flex-col md:flex-row items-start md:items-center w-full timeline-item opacity-0 translate-y-8 transition-all duration-1000 ease-out delay-100">
+          <div class="absolute left-0 md:left-1/2 w-5 h-5 rounded-full bg-[#f7f1e6] border-4 border-[#cf962a] md:-translate-x-1/2 mt-[6px] md:mt-0 z-10 shadow-sm"></div>
+          
+          <div class="w-full md:w-[45%] pl-12 md:pl-0 md:pr-12 md:text-right">
+            <span class="text-[#cf962a] font-semibold text-xs tracking-widest uppercase mb-2 block">Phase 05</span>
+            <h3 class="font-serif text-[#1e293b] text-2xl md:text-3xl mb-3">Mission & Impact</h3>
+            <p class="text-base md:text-lg text-[#334155] leading-relaxed">
+              Now known as Acharya Advait Yogbhushan, he founded A Himalayan Yogi Institute to guide others toward clarity, balance, and inner peace. His teachings have helped thousands improve their well-being.
+            </p>
+          </div>
+          <div class="w-full md:w-[45%] pl-12 md:pl-12 md:pr-0 mt-8 md:mt-0">
+            <div class="relative w-full aspect-square md:aspect-[4/3] rounded-2xl overflow-hidden shadow-xl border border-black/5 group">
+              <img 
+                src="/images/v7/journeyimage5.jpg" 
+                alt="Turning Point in the Himalayas" 
+                class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-in-out" 
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="relative flex flex-col md:flex-row-reverse items-start md:items-center w-full timeline-item opacity-0 translate-y-8 transition-all duration-1000 ease-out delay-100">
+          <div class="absolute left-0 md:left-1/2 w-5 h-5 rounded-full bg-[#f7f1e6] border-4 border-[#cf962a] md:-translate-x-1/2 mt-[6px] md:mt-0 z-10 shadow-sm"></div>
+          
+          <div class="w-full md:w-[45%] pl-12 md:pl-12 md:pr-0 text-left">
+            <span class="text-[#cf962a] font-semibold text-xs tracking-widest uppercase mb-2 block">Present</span>
+            <h3 class="font-serif text-[#1e293b] text-2xl md:text-3xl mb-3">A Living Philosophy</h3>
+            <p class="text-base md:text-lg text-[#334155] leading-relaxed">
+              His journey reflects the true essence of yoga as a way of life. He continues to inspire transformation, emphasizing that inner change is the foundation of a meaningful and awakened life.
+            </p>
+          </div>
+          <div class="w-full md:w-[45%] pl-12 md:pl-0 md:pr-12 mt-8 md:mt-0">
+            <div class="relative w-full aspect-square md:aspect-[4/3] rounded-2xl overflow-hidden shadow-xl border border-black/5 group">
+              <img 
+                src="/images/v7/journeyimage6.jpg" 
+                alt="Limitations and Struggle" 
+                class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-in-out" 
+              />
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <Footerv7 />
+</LayoutV7>
+
+<script>
+  function initCollageParallax() {
+    const heroMain = document.getElementById('hero-main') as HTMLElement;
+    const collageContainer = document.getElementById('collage-container') as HTMLElement;
+    if (!collageContainer) return;
+
+    const imgs = {
+      topLeft: document.getElementById('img-top-left') as HTMLElement,
+      topCenter: document.getElementById('img-top-center') as HTMLElement,
+      topRight: document.getElementById('img-top-right') as HTMLElement,
+      bottomLeft: document.getElementById('img-bottom-left') as HTMLElement,
+      bottomRight: document.getElementById('img-bottom-right') as HTMLElement,
+      center: document.getElementById('img-center') as HTMLElement
+    };
+
+    function update() {
+      const scrollPos = window.pageYOffset;
+      const viewportHeight = window.innerHeight;
+      const isMobile = window.innerWidth < 1024;
+
+      const fadeThreshold = viewportHeight * 0.75;
+      let opacityMultiplier = 1 - (scrollPos / fadeThreshold);
+      if (opacityMultiplier < 0) opacityMultiplier = 0; 
+      const baseOpacity = isMobile ? 0.35 : 1;
+      collageContainer.style.opacity = String(baseOpacity * opacityMultiplier);
+
+      if (scrollPos > fadeThreshold) {
+          return requestAnimationFrame(update);
+      }
+
+      if (scrollPos < viewportHeight * 1.5) {
+        imgs.topCenter.style.transform = `translate3d(0, -${scrollPos * 0.25}px, 0)`;
+        imgs.topLeft.style.transform = `translate3d(-${scrollPos * 0.15}px, -${scrollPos * 0.2}px, 0) rotate(-3deg)`;
+        imgs.topRight.style.transform = `translate3d(${scrollPos * 0.15}px, -${scrollPos * 0.2}px, 0) rotate(3deg)`;
+        imgs.center.style.transform = `translate3d(0, ${scrollPos * 0.05}px, 0)`;
+
+        if (!isMobile && imgs.bottomLeft && imgs.bottomRight) {
+          imgs.bottomLeft.style.transform = `translate3d(-${scrollPos * 0.2}px, ${scrollPos * 0.15}px, 0) rotate(-2deg)`;
+          imgs.bottomRight.style.transform = `translate3d(${scrollPos * 0.2}px, ${scrollPos * 0.15}px, 0) rotate(2deg)`;
+        }
+      }
+
+      requestAnimationFrame(update);
+    }
+    requestAnimationFrame(update);
+  }
+
+  function initSmoothScroll() {
+    
+    const scrollLinks = document.querySelectorAll('a[href^="#"]');
+
+    scrollLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        
+        e.preventDefault(); 
+        
+        const targetId = link.getAttribute('href');
+        
+       
+        if(!targetId || targetId === '#') return; 
+        
+        const targetSection = document.querySelector(targetId);
+        
+        if (targetSection) {
+          targetSection.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  }
+
+  function initTimelineAnimation() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.remove('opacity-0', 'translate-y-8');
+          entry.target.classList.add('opacity-100', 'translate-y-0');
+          observer.unobserve(entry.target); 
+        }
+      });
+    }, {
+      threshold: 0.2,
+      rootMargin: "0px 0px -50px 0px"
+    });
+
+    const items = document.querySelectorAll('.timeline-item');
+    items.forEach(item => observer.observe(item));
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    initCollageParallax();
+    initSmoothScroll(); 
+    initTimelineAnimation();
+  });
+</script>

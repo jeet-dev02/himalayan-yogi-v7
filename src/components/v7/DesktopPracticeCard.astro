@@ -1,0 +1,27 @@
+---
+// src/components/v7/DesktopPracticeCard.astro
+const { src, title, pos, delay, zIndex, popoutDir } = Astro.props;
+
+const isRightPopout = popoutDir === 'right';
+const popoutClass = isRightPopout ? 'left-[105%] origin-left' : 'right-[105%] origin-right';
+---
+<div class={`yoga-card floating-card absolute ${pos} pointer-events-auto transition-all duration-500 ${zIndex}`} style={`animation-delay: ${delay};`}>
+    
+    <div class="relative bg-white rounded-2xl p-4 shadow-lg border border-black/5 flex flex-col items-center group cursor-pointer z-10">
+        <div class="w-full aspect-[4/3] rounded-xl overflow-hidden mb-3">
+            <img src={`/images/v7/${src}`} alt={title} class="w-full h-full object-cover" />
+        </div>
+        <h3 class="font-serif text-[#1e293b] text-lg mb-2 text-center leading-tight">{title}</h3>
+        <button class="read-more-btn mt-2 mb-1 px-4 py-1.5 rounded-full border border-[#cf962a]/40 text-[#cf962a] text-[9px] font-semibold hover:bg-[#cf962a] hover:text-white transition-colors uppercase tracking-widest">Read More</button>
+    </div>
+    
+    <div class={`detail-card absolute top-1/2 -translate-y-1/2 ${popoutClass} w-64 bg-[#f7f1e6] rounded-2xl p-5 shadow-2xl border border-[#cf962a]/30 opacity-0 pointer-events-none transition-all duration-300 scale-95 z-0 text-left`}>
+        <button class="close-btn absolute top-2 right-4 text-gray-400 hover:text-gray-800 text-2xl leading-none">&times;</button>
+        <h4 class="font-serif text-lg text-[#1e293b] mb-1">{title} Details</h4>
+        <div class="w-8 h-px bg-[#cf962a] mb-3"></div>
+        <p class="text-[11px] text-[#334155] leading-relaxed">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam erat volutpat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla facilisi. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+        </p>
+    </div>
+
+</div>

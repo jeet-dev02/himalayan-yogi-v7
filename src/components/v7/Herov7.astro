@@ -1,0 +1,88 @@
+---
+// src/components/v7/Herov7.astro
+---
+
+<section class="relative w-full h-screen min-h-[550px] flex items-center overflow-hidden bg-[#f9f3e7]">
+  
+  <div id="parallax-mountain" class="absolute inset-0 z-0 w-full h-[150%] -top-[10%] [will-change:transform]">
+    <img 
+      src="/images/v7/MountainsBg.jpg" 
+      alt="Himalayan Mountains" 
+      class="w-full h-full object-cover object-top" 
+      loading="eager"
+      decoding="sync"
+    />
+  </div>
+
+  <div id="parallax-yogi" class="absolute top-0 right-0 z-10 w-[110%] h-full [will-change:transform] pointer-events-none">
+    <img 
+      src="/images/v7/Yogi.png" 
+      alt="Himalayan Yogi" 
+      class="w-full h-full object-cover object-right-top" 
+      loading="eager"
+      decoding="sync"
+    />
+  </div>
+
+  <div id="parallax-gradient" class="absolute z-20 w-full h-[150%] -top-[10%] bg-gradient-to-r from-black/80 via-black/40 to-transparent pointer-events-none [will-change:transform]"></div>
+
+  <div id="parallax-text" class="relative z-30 w-full lg:w-[55%] flex flex-col items-start text-left pl-6 md:pl-12 lg:pl-20 pr-6 pt-20 [will-change:transform]">
+    
+    <h1 class="font-serif text-white font-normal leading-[1.15] tracking-[0.05em] text-4xl lg:text-5xl xl:text-6xl mb-6 drop-shadow-lg">
+      AWAKEN YOUR <br />
+      DIVINE ESSENCE
+    </h1>
+    
+    <div class="mb-8 flex flex-col gap-3">
+      <p class="text-xl lg:text-xl font-serif text-white leading-snug drop-shadow-md">
+        तत्रैकाग्रं मनः कृत्वा यतचित्तेन्द्रियक्रियः।<br />
+        उपविश्यासने युञ्ज्याद् योगमात्मविशुद्धये॥
+      </p>
+      <p class="text-sm md:text-base lg:text-sm font-serif italic text-white/95 leading-relaxed drop-shadow-md">
+        With focused mind and controlled senses, one should<br />
+        sit in meditation for the purification of the self.
+      </p>
+    </div>
+
+    <div class="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+      <a href="/programs" class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-[#cf962a] text-white font-semibold text-xs tracking-widest uppercase hover:bg-[#db8d19] hover:-translate-y-1 transition-all duration-300 shadow-xl text-center">
+        JOIN A RETREAT
+      </a>
+    </div>
+    
+  </div>
+  
+</section>
+
+<script>
+  function initParallax() {
+    
+    const mountain = document.getElementById('parallax-mountain') as HTMLElement;
+    const yogi = document.getElementById('parallax-yogi') as HTMLElement;
+    const textContent = document.getElementById('parallax-text') as HTMLElement;
+    const gradient = document.getElementById('parallax-gradient') as HTMLElement;
+    
+    if (!mountain || !yogi || !textContent || !gradient) return;
+
+    function update() {
+      const scrollPos = window.pageYOffset;
+      
+      
+      const upMovement = `translate3d(0, -${scrollPos * 0.2}px, 0)`;
+      mountain.style.transform = upMovement;
+      gradient.style.transform = upMovement;
+
+      
+      yogi.style.transform = `translate3d(${scrollPos * 0.35}px, 0, 0)`;
+      
+      
+      textContent.style.transform = `translate3d(-${scrollPos * 0.5}px, 0, 0)`;
+      
+      requestAnimationFrame(update);
+    }
+
+    requestAnimationFrame(update);
+  }
+
+  document.addEventListener('DOMContentLoaded', initParallax);
+</script>

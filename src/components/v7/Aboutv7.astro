@@ -1,0 +1,117 @@
+---
+// src/components/v7/Aboutv7.astro
+---
+
+<section id="about" class="w-full bg-[#f9f3e7] pt-12 md:pt-16 pb-20 md:pb-28 overflow-hidden flex flex-col items-center relative">
+  
+  <div class="reveal-on-scroll absolute top-[35%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[350px] md:w-[450px] lg:w-[600px] pointer-events-none z-0 opacity-8 transition-opacity duration-[2000ms] ease-out" data-target-opacity="opacity-[0.06]">
+    <img 
+      src="/images/v7/aboutbg.png" 
+      alt="Decorative Background" 
+      class="w-full h-auto object-contain"
+      loading="lazy"
+    />
+  </div>
+
+  <div class="max-w-6xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center w-full relative z-10">
+    
+    <div class="reveal-on-scroll opacity-0 translate-y-12 transition-all duration-1000 ease-out relative z-10 w-full max-w-[280px] md:max-w-[340px] mx-auto lg:mx-0 lg:ml-auto" data-transform="translate-y-12">
+      <div class="bg-white p-3 md:p-4 rounded-sm shadow-xl transform -rotate-2 hover:rotate-0 transition-all duration-500 border border-[#D4A373]/30">
+        <img 
+          src="/images/v7/about.jpg" 
+          alt="Advait Yogbhushan" 
+          class="w-full h-auto object-cover opacity-100 transition-opacity duration-300"
+          loading="lazy"
+        />
+      </div>
+    </div>
+
+    <div class="reveal-on-scroll opacity-0 translate-y-12 transition-all duration-1000 delay-300 ease-out relative z-10 w-full max-w-xl mx-auto lg:mx-0 flex items-center justify-center min-h-[500px] md:min-h-[550px]" data-transform="translate-y-12">
+      <img 
+        src="/images/v7/manuscript.png" 
+        alt="Ancient Manuscript" 
+        class="absolute inset-0 w-full h-full object-fill drop-shadow-xl z-0 opacity-95"
+      />
+      <div class="relative z-10 px-16 md:px-24 w-full flex flex-col items-center text-center">
+        <span class="text-[9px] md:text-[10px] font-bold tracking-[0.2em] text-[#8A6345] uppercase mb-1.5">
+          The Way of the Soul
+        </span>
+        <h2 class="text-2xl md:text-4xl text-[#2C241B] italic mb-3 leading-tight font-medium" style="font-family: 'Cormorant Garamond', serif;">
+          Advait Yogbhushan
+        </h2>
+        <div class="space-y-2 text-[#2C241B]/90 text-xs md:text-sm leading-relaxed" style="font-family: 'Cormorant Garamond', serif;">
+          <p>
+            Born in the sacred valleys of the Garhwal Himalayas, Advait Yogbhushan has spent over three decades navigating the profound silence of the high peaks and the depths of ancient Vedic wisdom.
+          </p>
+          <p>
+            Through <span class="italic font-semibold">The Himalayan Yogi</span>, he bridges the gap between the chaotic rhythm of modern existence and the timeless stillness of the Atman.
+          </p>
+        </div>
+        <div class="mt-5">
+          <a href="/about" class="px-6 md:px-8 py-2.5 md:py-3 rounded-full bg-[#8A6345] text-white font-bold text-[9px] md:text-[10px] tracking-widest uppercase hover:bg-[#735137] transition-all shadow-md">
+            KNOW MORE...
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="relative z-10 w-full max-w-4xl mx-auto px-6 mt-6 md:mt-10 flex flex-col items-center text-center">
+    
+    <p class="reveal-on-scroll opacity-0 translate-y-8 transition-all duration-1000 delay-500 ease-out text-2xl md:text-3xl lg:text-4xl text-[#D4A373] italic font-medium leading-relaxed drop-shadow-sm" style="font-family: 'Cormorant Garamond', serif;" data-transform="translate-y-8">
+      "Do not become a victim of your mind,<br class="hidden md:block" />
+      Allow your mind be like a free bird, let your body dance in harmony with divine.."
+    </p>
+
+    <div class="reveal-on-scroll opacity-0 translate-y-8 transition-all duration-1000 delay-700 ease-out mt-6 md:mt-8" data-transform="translate-y-8">
+      <img 
+        src="/images/v7/quotesign.png" 
+        alt="Advait Yogbhushan Signature" 
+        class="h-16 md:h-20 w-auto object-contain mix-blend-multiply opacity-90"
+        loading="lazy"
+      />
+    </div>
+
+  </div>
+
+</section>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const el = entry.target;
+        
+        if (entry.isIntersecting) {
+          
+          if (el.hasAttribute('data-target-opacity')) {
+            el.classList.remove('opacity-0');
+            el.classList.add(el.getAttribute('data-target-opacity'));
+          } else {
+            const transform = el.getAttribute('data-transform') || 'translate-y-12';
+            el.classList.remove('opacity-0', transform);
+            el.classList.add('opacity-100', 'translate-y-0');
+          }
+        } else {
+         
+          if (el.hasAttribute('data-target-opacity')) {
+            el.classList.remove(el.getAttribute('data-target-opacity'));
+            el.classList.add('opacity-0');
+          } else {
+            const transform = el.getAttribute('data-transform') || 'translate-y-12';
+            el.classList.remove('opacity-100', 'translate-y-0');
+            el.classList.add('opacity-0', transform);
+          }
+        }
+      });
+    }, {
+      threshold: 0.15, 
+      
+      rootMargin: "0px" 
+    });
+
+    const hiddenElements = document.querySelectorAll('.reveal-on-scroll');
+    hiddenElements.forEach((el) => observer.observe(el));
+  });
+</script>

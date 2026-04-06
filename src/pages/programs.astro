@@ -1,0 +1,389 @@
+---
+// src/pages/v7/programs.astro
+import LayoutV7 from '../layouts/LayoutV7.astro';
+import Headerv7 from '../components/v7/Headerv7.astro';
+import Footerv7 from '../components/v7/Footerv7.astro';
+
+
+const editorialPrograms = [
+  {
+    title: "Yogarabh",
+    subtitle: "Foundational Immersion",
+    desc: "A foundational 7-day awakening to the rhythm of breath and stone in the high Himalayas. Perfect for establishing a daily practice.",
+    img: "programsimage3.jpg",
+    tag: "Residential", 
+    theme: "light",
+    bgClass: "bg-[#f7f1e6]",
+    textClass: "text-[#1e293b]",
+    accentClass: "text-[#cf962a]",
+    imgPos: "object-right-top"
+  },
+  {
+    title: "Saptabindu Sadhana",
+    subtitle: "Seven-Point Awakening",
+    desc: "A deep 21-day exploration of the seven energy centers through ancient vedic practices. Designed for serious seekers ready to face the intense fire of transformation.",
+    img: "journeyimage4.jpg",
+    tag: "Residential", 
+    theme: "warm",
+    bgClass: "bg-[#f9f3e7]", 
+    textClass: "text-[#2c1e16]", 
+    accentClass: "text-[#cf962a]",
+    imgPos: "object-[center_10%]"
+  },
+  {
+    title: "Shunya Silence",
+    subtitle: "The Inner Void",
+    desc: "Reconnect with the inner voice through noble silence, meditation, and guided mountain treks away from modern distractions. Step into the vastness of the outer and inner world.",
+    img: "programsimage4.jpg",
+    tag: "Residential", 
+    theme: "warm",
+    bgClass: "bg-[#f9f3e7]",
+    textClass: "text-[#1e293b]",
+    accentClass: "text-[#cf962a]",
+    imgPos: "object-top" 
+  }
+];
+
+
+const ashramLifeImages = [
+  "programsimage6.jpg", 
+  "programsimage7.jpg",
+  "programsimage8.jpg" ,
+  "programsimage9.jpg",
+  "programsimage10.jpg",
+  "programsimage11.jpg"
+];
+
+
+const alignmentImages = [
+  "therapyimage1.jpg", 
+  "therapyimage2.jpg", 
+  "therapyimage3.jpg", 
+  "therapyimage4.jpg", 
+  "therapyimage5.jpg"
+];
+
+const therapyImages = [
+  "therapyimage6.jpg", 
+  "therapyimage7.jpg", 
+  "therapyimage8.jpg", 
+  "therapyimage9.jpg", 
+  "therapyimage10.jpg"
+];
+---
+
+<LayoutV7>
+  <Headerv7 theme='light' />
+  
+  <main class="relative w-full min-h-screen bg-[#f7f1e6] overflow-x-hidden pb-0">
+    
+    <section class="relative w-full h-[100svh] min-h-[600px] pt-[110px] pb-10 overflow-hidden flex items-center">
+      
+      <div id="hero-image-wrapper" class="hidden lg:block absolute top-[110px] right-0 w-[52%] xl:w-[55%] h-[calc(100svh-150px)] z-0 rounded-l-[3rem] overflow-hidden border-y border-l border-[#cf962a]/10 transition-transform duration-75 ease-out">
+        <img alt="Arms wide open" class="w-full h-full object-cover object-[center_top]" src="/images/v7/programsimage1.jpg"/>
+      </div>
+
+      <div class="max-w-[1400px] w-full mx-auto px-6 md:px-12 lg:px-20 relative z-10 flex flex-col lg:flex-row items-center h-full">
+        
+        <div class="w-full lg:w-5/12 flex flex-col items-start text-left justify-center h-full pb-8 lg:pb-0">
+          <h1 class="font-serif text-[#1e293b] text-4xl lg:text-5xl xl:text-6xl mb-4 tracking-tight leading-[1.1]">
+            Transform Your <br class="hidden lg:block" />
+            <span class="text-[#cf962a]">Life</span>
+          </h1>
+          
+          <div class="border-l-2 border-[#cf962a] pl-4 mb-5">
+            <p class="font-serif text-[#334155] text-lg lg:text-xl font-light tracking-wide italic leading-snug">
+              Where Practice Becomes Transformation.
+            </p>
+          </div>
+          
+          <p class="text-[#334155] text-sm lg:text-base leading-relaxed font-serif mb-8 max-w-md">
+           Immersive retreats, teacher trainings, and guided journeys designed to awaken your inner consciousness.
+          </p>
+          
+          <button class="pointer-events-auto w-full sm:w-auto px-10 py-4 rounded border border-[#edba4c] text-[#334155] font-semibold text-xs tracking-[0.1em] uppercase hover:bg-[#eaa749] hover:text-white transition-all duration-300 text-center shadow-sm">
+            Begin Your Journey
+          </button>
+        </div>
+
+        <div class="w-full block lg:hidden relative z-10 h-[45vh]">
+          <div class="w-full h-full relative overflow-hidden rounded-[2.5rem] border border-black/5">
+            <img alt="Arms wide open" class="w-full h-full object-cover object-[center_top]" src="/images/v7/programsimage1.jpg"/>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="w-full border-t border-[#cf962a]/10 pt-12 bg-[#f7f1e6]">
+      <div class="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 mb-12">
+        <span class="text-xs uppercase tracking-[0.3em] text-[#cf962a] font-semibold mb-4 block">The Path</span>
+        <h2 class="font-serif text-4xl md:text-5xl text-[#1e293b]">Immersive Retreats</h2>
+      </div>
+    </div>
+
+    {editorialPrograms.map((program, index) => (
+      <section class={`w-full py-24 md:py-32 px-6 md:px-12 lg:px-20 ${program.bgClass} relative overflow-hidden`}>
+        <div class={`max-w-[1400px] mx-auto flex flex-col ${index % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-12 lg:gap-24 relative z-10`}>
+          
+          <div class="w-full lg:w-1/2">
+            <div class="w-full aspect-[4/5] rounded-t-full rounded-b-3xl overflow-hidden relative shadow-xl">
+              <img alt={program.title} class={`w-full h-full object-cover ${program.imgPos || 'object-center'}`} src={`/images/v7/${program.img}`} />
+            </div>
+          </div>
+
+          <div class={`w-full lg:w-1/2 flex flex-col justify-center ${program.textClass}`}>
+            <span class={`text-[10px] uppercase tracking-[0.25em] font-bold mb-6 block ${program.accentClass}`}>
+              0{index + 1} &mdash; {program.tag || 'Residential'}
+            </span>
+            <h3 class="font-serif text-4xl md:text-5xl lg:text-6xl mb-6 leading-tight">
+              {program.title}
+            </h3>
+            <p class="font-serif text-lg md:text-xl italic font-light opacity-80 mb-8 border-l border-[#cf962a] pl-6">
+              "{program.subtitle}"
+            </p>
+            <p class="text-base md:text-lg leading-relaxed font-serif opacity-90 mb-12 max-w-lg">
+              {program.desc}
+            </p>
+            <a href="#" class={`uppercase tracking-widest text-[11px] font-bold flex items-center gap-4 w-fit pb-2 border-b border-[#cf962a]/30 hover:border-[#cf962a] transition-colors ${program.accentClass}`}>
+              Step Into This Practice 
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+            </a>
+          </div>
+
+        </div>
+      </section>
+    ))}
+
+    <section class="w-full py-32 bg-[#FBF5E9] text-[#2c1e16] overflow-hidden">
+      <div class="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8">
+        <div>
+          <span class="text-xs uppercase tracking-[0.3em] text-[#cf962a] font-semibold mb-4 block">Our Global Community</span>
+          <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl text-[#2c1e16] leading-tight">
+            Journeys Already <br/> <span class="text-[#cf962a]">Taken</span>
+          </h2>
+        </div>
+        <p class="text-[#4a3b32] font-serif text-lg max-w-md italic leading-relaxed">
+          Join thousands of seekers who have stepped out of their daily routines and into profound transformation across the Himalayas.
+        </p>
+      </div>
+
+      <div class="w-full pl-6 md:pl-12 lg:pl-20 flex gap-6 overflow-x-auto hide-scrollbar snap-x snap-mandatory pb-8">
+        
+        <div class="relative w-[85vw] md:w-[60vw] lg:w-[45vw] shrink-0 aspect-video rounded-3xl overflow-hidden snap-center group">
+          <img src="/images/v7/takenimage1.jpg" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700" alt="Ganges Retreat" />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#2c1e16]/90 via-[#2c1e16]/20 to-transparent pointer-events-none"></div>
+          <div class="absolute bottom-8 left-8">
+            <h4 class="font-serif text-2xl md:text-3xl text-[#FBF5E9] mb-1">Ganges Awakening</h4>
+            <span class="text-[#cf962a] text-[10px] uppercase tracking-widest font-bold">Rishikesh, 2024</span>
+          </div>
+        </div>
+
+        <div class="relative w-[85vw] md:w-[60vw] lg:w-[45vw] shrink-0 aspect-video rounded-3xl overflow-hidden snap-center group">
+          <img src="/images/v7/takenimage2.jpg" class="w-full h-full object-cover object-[center_30%] group-hover:scale-105 transition-transform duration-700" alt="Forest Satsang" />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#2c1e16]/90 via-[#2c1e16]/20 to-transparent pointer-events-none"></div>
+          <div class="absolute bottom-8 left-8">
+            <h4 class="font-serif text-2xl md:text-3xl text-[#FBF5E9] mb-1">Forest Satsang</h4>
+            <span class="text-[#cf962a] text-[10px] uppercase tracking-widest font-bold">Himalayan Foothills</span>
+          </div>
+        </div>
+
+        <div class="relative w-[85vw] md:w-[60vw] lg:w-[45vw] shrink-0 aspect-video rounded-3xl overflow-hidden snap-center group">
+          <img src="/images/v7/takenimage3.jpg" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700" alt="Mountain Trek" />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#2c1e16]/90 via-[#2c1e16]/20 to-transparent pointer-events-none"></div>
+          <div class="absolute bottom-8 left-8">
+            <h4 class="font-serif text-2xl md:text-3xl text-[#FBF5E9] mb-1">Mountain Pilgrimage</h4>
+            <span class="text-[#cf962a] text-[10px] uppercase tracking-widest font-bold">Uttarakhand Trek</span>
+          </div>
+        </div>
+
+        <div class="shrink-0 w-6 md:w-12 lg:w-20"></div>
+      </div>
+    </section>
+
+    <section class="w-full bg-[#f7f1e6] py-32 px-6 md:px-12 lg:px-20 border-t border-[#cf962a]/10">
+      <div class="max-w-[1400px] mx-auto flex flex-col lg:flex-row items-stretch gap-0 shadow-2xl rounded-3xl overflow-hidden">
+        
+        <div class="w-full lg:w-1/2 bg-[#FBF5E9] text-[#2c1e16] p-12 md:p-20 flex flex-col justify-center">
+          <span class="text-xs uppercase tracking-[0.3em] text-[#cf962a] font-semibold mb-6 block">Lineage & Mastery</span>
+          <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl mb-8 leading-tight">The Art of <br/>Teaching</h2>
+          <p class="text-[#4a3b32] leading-relaxed mb-12 text-lg font-serif max-w-md">
+            Earn your certification in the heart of the mountains. Our program merges ancient yogic wisdom with modern anatomical precision. Return not just as a practitioner, but as a guide.
+          </p>
+          <a href="/about" class="uppercase tracking-widest text-[11px] font-bold flex items-center gap-4 w-fit pb-2 border-b border-[#cf962a]/40 text-[#cf962a] hover:border-[#cf962a] transition-colors">
+            Discover the Lineage
+          </a>
+        </div>
+        
+        <div class="w-full lg:w-1/2 min-h-[400px]">
+          <img alt="Teacher reading ancient texts" class="w-full h-full object-cover grayscale" src="/images/v7/programsimage5.jpg"/>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="py-32 px-6 md:px-12 lg:px-20 max-w-[1400px] mx-auto bg-[#f7f1e6]">
+      <div class="text-center mb-24">
+        <span class="text-xs uppercase tracking-[0.3em] text-[#cf962a] font-semibold mb-4 block">Restoration</span>
+        <h2 class="font-serif text-4xl md:text-5xl text-[#1e293b]">Healing & Yoga Therapy</h2>
+      </div>
+
+      <div class="flex flex-col gap-24">
+        
+        <div class="flex flex-col md:flex-row items-center gap-12">
+          <div class="w-full md:w-5/12 overflow-hidden rounded-[3rem] aspect-square relative shadow-lg bg-[#FBF5E9]">
+            {alignmentImages.map((img, i) => (
+              <img 
+                alt={`Structural Alignment ${i+1}`} 
+                class={`absolute inset-0 w-full h-full object-cover object-[center_top] fade-img fade-delay-${i}`} 
+                src={`/images/v7/${img}`}
+              />
+            ))}
+          </div>
+          <div class="w-full md:w-7/12 flex flex-col items-start md:pl-12">
+            <h4 class="font-serif text-3xl md:text-4xl mb-4 text-[#1e293b]">Structural Alignment</h4>
+            <p class="text-[#334155] text-lg leading-relaxed mb-8 font-serif max-w-lg">
+              Restorative therapeutic sequences utilizing deep postural alignment and structural props to release long-held, chronic tension trapped in the body.
+            </p>
+            <a href="/practices" class="text-[#cf962a] text-[10px] uppercase tracking-widest font-bold flex items-center gap-2">
+              Discover Therapy <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row-reverse items-center gap-12">
+          <div class="w-full md:w-5/12 overflow-hidden rounded-[3rem] aspect-square relative shadow-lg bg-[#FBF5E9]">
+            {therapyImages.map((img, i) => (
+              <img 
+                alt={`Assisted Asana Therapy ${i+1}`} 
+                class={`absolute inset-0 w-full h-full object-cover object-[center_top] fade-img fade-delay-${i}`} 
+                src={`/images/v7/${img}`}
+              />
+            ))}
+          </div>
+          <div class="w-full md:w-7/12 flex flex-col items-start md:pr-12 md:text-right md:items-end">
+            <h4 class="font-serif text-3xl md:text-4xl mb-4 text-[#1e293b]">Assisted Asana Therapy</h4>
+            <p class="text-[#334155] text-lg leading-relaxed mb-8 font-serif max-w-lg">
+              A hands-on therapeutic approach combining assisted postures with precise anatomical adjustments to deepen the practice safely and effectively.
+            </p>
+            <a href="/practices" class="text-[#cf962a] text-[10px] uppercase tracking-widest font-bold flex items-center gap-2 flex-row-reverse">
+              Discover Healing <svg class="w-4 h-4 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="py-32 px-6 md:px-12 lg:px-20 max-w-[1400px] mx-auto bg-[#f7f1e6] border-t border-[#cf962a]/10">
+      <div class="text-center mb-16">
+        <span class="text-xs uppercase tracking-[0.3em] text-[#cf962a] font-semibold mb-4 block">Daily Rhythm</span>
+        <h2 class="font-serif text-4xl md:text-5xl text-[#1e293b]">Life at the Ashram</h2>
+        <p class="text-[#334155] font-serif text-lg max-w-2xl mx-auto mt-6">
+          Beyond the structured practices, experience the profound simplicity of community, devotion, and living in rhythm with the mountains.
+        </p>
+      </div>
+
+      <div class="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+        {ashramLifeImages.map((src) => (
+          <div class="break-inside-avoid relative group rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300">
+            <img 
+              src={`/images/v7/${src}`} 
+              alt="Ashram Life" 
+              class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700 ease-in-out"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-[#cf962a]/0 group-hover:bg-[#cf962a]/10 transition-colors duration-300 pointer-events-none"></div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="w-full bg-[#FBF5E9] py-32 px-6 text-center border-t-8 border-[#cf962a]">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="font-serif text-4xl md:text-5xl text-[#2c1e16] mb-8 leading-tight">
+          Join the Global Sangha
+        </h2>
+        <p class="text-[#4a3b32] font-serif text-xl mb-12 leading-relaxed italic">
+        Wherever you are, the journey inward remains the same. Join our private circle for curated wisdom from the Acharya and early access to upcoming Himalayan immersions.
+        </p>
+        
+        <form 
+          id="sangha-form" 
+          class="flex flex-col md:flex-row items-center justify-center gap-4 max-w-xl mx-auto transition-opacity duration-500" 
+          onsubmit="event.preventDefault(); document.getElementById('sangha-form').style.display='none'; document.getElementById('success-message').style.display='block';"
+        >
+          <input 
+            type="email" 
+            required 
+            placeholder="Enter your email address..." 
+            class="w-full md:w-2/3 bg-transparent border border-[#cf962a]/50 text-[#2c1e16] placeholder-[#4a3b32]/60 px-6 py-4 rounded-full focus:outline-none focus:border-[#cf962a] font-serif italic"
+          />
+          <button 
+            type="submit" 
+            class="w-full md:w-auto bg-[#cf962a] text-[#FBF5E9] px-10 py-4 rounded-full font-bold uppercase tracking-widest text-[10px] hover:bg-[#a67721] transition-colors duration-300"
+          >
+            Join
+          </button>
+        </form>
+
+        <div id="success-message" style="display: none;" class="animate-fade-in mt-4">
+          <p class="font-serif text-2xl text-[#cf962a] italic">
+            Thank you for joining our path.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+  <Footerv7 />
+</LayoutV7>
+
+<style is:global>
+  .hide-scrollbar::-webkit-scrollbar { 
+    display: none; 
+  }
+  .hide-scrollbar { 
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+  }
+  
+  
+  .fade-img {
+    opacity: 0;
+    animation: imageFade 20s infinite; 
+  }
+  
+  .fade-delay-0 { animation-delay: 0s; }
+  .fade-delay-1 { animation-delay: 4s; }
+  .fade-delay-2 { animation-delay: 8s; }
+  .fade-delay-3 { animation-delay: 12s; }
+  .fade-delay-4 { animation-delay: 16s; }
+
+  @keyframes imageFade {
+    0%   { opacity: 0; }
+    5%   { opacity: 1; }   
+    20%  { opacity: 1; }   
+    25%  { opacity: 0; }   
+    100% { opacity: 0; }   
+  }
+</style>
+
+<script is:inline>
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    const heroWrapper = document.getElementById('hero-image-wrapper');
+    
+    if (heroWrapper) {
+      window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+        
+        if (scrollY < window.innerHeight) {
+          heroWrapper.style.transform = `translateX(${scrollY * 0.25}px)`;
+          heroWrapper.style.opacity = `${1 - (scrollY / window.innerHeight) * 0.8}`;
+        }
+      });
+    }
+  });
+</script>
