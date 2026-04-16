@@ -2,7 +2,7 @@
 // src/components/v7/Herov7.astro
 ---
 
-<section class="relative w-full h-screen min-h-[550px] flex items-center overflow-hidden bg-[#f9f3e7]">
+<section class="relative w-full h-[100svh] min-h-[550px] flex items-center overflow-hidden bg-[#f9f3e7]">
   
   <div id="parallax-mountain" class="absolute inset-0 z-0 w-full h-[150%] -top-[10%] [will-change:transform]">
     <img 
@@ -18,7 +18,7 @@
     <img 
       src="/images/v7/Yogi.png" 
       alt="Himalayan Yogi" 
-      class="w-full h-full object-cover object-right-top" 
+      class="w-full h-full object-cover object-right-bottom md:object-right-top" 
       loading="eager"
       decoding="sync"
     />
@@ -67,14 +67,11 @@
     function update() {
       const scrollPos = window.pageYOffset;
       
-      
       const upMovement = `translate3d(0, -${scrollPos * 0.2}px, 0)`;
       mountain.style.transform = upMovement;
       gradient.style.transform = upMovement;
 
-      
       yogi.style.transform = `translate3d(${scrollPos * 0.35}px, 0, 0)`;
-      
       
       textContent.style.transform = `translate3d(-${scrollPos * 0.5}px, 0, 0)`;
       
